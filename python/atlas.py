@@ -125,7 +125,7 @@ def retrieveBaseFolder(root):
 reDegree = re.compile("#([0-9]+)")
 
 
-parser = argparse.ArgumentParser("Hexgon Texture Packer Generator\n")
+parser = argparse.ArgumentParser("Octagon Texture Packer Generator\n")
 parser.add_argument('-o','--output',help='Output directory',required=False)
 parser.add_argument('-d','--directory',help='image folder path',required=True)
 parser.add_argument('-gap','--gap',help='cutting gap',required=False)

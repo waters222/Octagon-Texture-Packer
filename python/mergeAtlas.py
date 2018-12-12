@@ -607,7 +607,7 @@ def drawLineColor(im, points, color):
     draw.line( (points[length][0], points[length][1],points[0][0], points[0][1],), fill = color)
 
 
-parser = argparse.ArgumentParser("Hexgon Texture Packer\n")
+parser = argparse.ArgumentParser("Octagon Texture Packer Merger\n")
 parser.add_argument('-d','--directory',help='image folder path',required=True)
 parser.add_argument('-size','--size',help='atlas max size',required=True)
 parser.add_argument('-m', '--merge', help='merge only', required=False)

@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 {
      // finally print a generated help page
     ArgvParser parser;
-    parser.setIntroductoryDescription("Hexagon Texture Packing Tool");
+    parser.setIntroductoryDescription("Octagon Texture Packing Tool");
     parser.defineOption("version","Display Version", ArgvParser::NoOptionAttribute);
     parser.defineOption("f", "Polygon Json File", ArgvParser::OptionRequiresValue | ArgvParser::OptionRequired);
     parser.defineOption("size", "Atlas Image Max Size", ArgvParser::OptionRequiresValue | ArgvParser::OptionRequired);
