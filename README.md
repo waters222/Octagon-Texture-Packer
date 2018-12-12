@@ -58,80 +58,90 @@ c. python modules:
     c. it will generate packed image plus meta json within <cutting output folder>, it will output multiple images if total size exceed max size defined.  
         e.g atlas-0.png, atlas-0.json
 3. packing image meta
+
+
 ```json
+                        octagon points order:
+                             1 ------ 0
+                            /          \
+                           2            7
+                           |            |
+                           3            6
+                            \          /
+                             4 ------ 5 
 {
-        "boxMaxX": 135,
-        "boxMaxY": 160,
-        "boxMinX": -136,
-        "boxMinY": -161,
-        "file": "stairsOpenSingle_NW.png",
-        "pixelToWorld": 1,
+        "boxMaxX": 135,     // max x in pixel relative to anchor point
+        "boxMaxY": 160,     // max y in pixel relative to anchor point
+        "boxMinX": -136,    // min y in pixel relative to anchor point
+        "boxMinY": -161,    // min y in pixel relative to anchor point
+        "file": "stairsOpenSingle_NW.png",  // file name
+        "pixelToWorld": 1,  // used for scale up image, useless now
         "points": [
             [
-                -57,
-                160
+                -57,        // point #0 x, y in pixel  relative to anchor point
+                160         
             ],
             [
-                -136,
+                -136,       // point #1 x, y in pixel  relative to anchor point
                 105
             ],
             [
-                -136,
+                -136,       // point #2 x, y in pixel  relative to anchor point
                 96
             ],
             [
-                41,
+                41,         // point #3 x, y in pixel  relative to anchor point
+                -161
+            ],
+            [   
+                75,         // point #4 x, y in pixel  relative to anchor point
                 -161
             ],
             [
-                75,
-                -161
-            ],
-            [
-                135,
+                135,        // point #5 x, y in pixel  relative to anchor point
                 -106
             ],
             [
-                135,
+                135,        // point #6 x, y in pixel  relative to anchor point
                 -96
             ],
             [
-                -43,
+                -43,        // point #7 x, y in pixel  relative to anchor point
                 160
             ]
         ],
-        "reverse": true,
+        "reverse": true,    // useless now
         "uv": [
             [
-                0.8911468178954002,
+                0.8911468178954002,     // point #0 x, y UV  relative packed image
                 0.04436383928571429
             ],
             [
-                0.8738185255198487,
+                0.8738185255198487,     // point #1 x, y UV  relative packed image
                 0.00027901785714285713
             ],
             [
-                0.8709829867674859,
+                0.8709829867674859,     // point #2 x, y UV  relative packed image
                 0.00027901785714285713
             ],
             [
-                0.7903276622558286,
+                0.7903276622558286,     // point #3 x, y UV  relative packed image
                 0.09849330357142858
             ],
             [
-                0.7903276622558286,
+                0.7903276622558286,     // point #4 x, y UV  relative packed image
                 0.11746651785714286
             ],
             [
-                0.80765595463138,
+                0.80765595463138,       // point #5 x, y UV  relative packed image
                 0.15094866071428573
             ],
             [
-                0.8108065532451165,
+                0.8108065532451165,     // point #6 x, y UV  relative packed image
                 0.15094866071428573
             ],
             [
-                0.8911468178954002,
+                0.8911468178954002,     // point #7 x, y UV  relative packed image
                 0.05217633928571429
             ]
         ]
