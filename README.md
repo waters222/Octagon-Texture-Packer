@@ -31,7 +31,7 @@
 ## How to Build
 1. prerequisite  
     a. OpenCL library/Headers  
-    
+
         a). install cuda toolkit for nvidia graphic cards  
         b). install amd app sdk for amd graphic cards    
     b. cmake
@@ -68,7 +68,7 @@ c. python modules:
 3. packing image meta
 
 
-```json
+```
                         octagon points order:
                              1 ------ 0
                             /          \
@@ -155,3 +155,5 @@ c. python modules:
         ]
     },
 ```
+
+## License
