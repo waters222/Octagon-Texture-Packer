@@ -161,3 +161,4 @@ c. python modules:
 - [] Add Cocos2d Plugin for import texture atlas
 
 ## Downloads
+* [Release Pre-Build Binary](https://github.com/weishi258/Octagon-Texture-Packer/releases/download/0.8.3/Release.zip)
