@@ -156,4 +156,8 @@ c. python modules:
     },
 ```
 
-## License
+## TODOS
+- [] Add Unity Plugin for import texture atlas
+- [] Add Cocos2d Plugin for import texture atlas
+
+## Downloads
