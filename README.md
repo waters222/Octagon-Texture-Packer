@@ -30,7 +30,10 @@
 
 ## How to Build
 1. prerequisite  
-    a. OpenCL library/Headers
+    a. OpenCL library/Headers  
+    
+        a). install cuda toolkit for nvidia graphic cards  
+        b). install amd app sdk for amd graphic cards    
     b. cmake
 2. clone repository
 3. build  
@@ -39,10 +42,15 @@
         bash> cd packing
         bash> mkdir -p build/make
         bash> cmake ../.. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-        bash> make
+        bash> cmake --build . --config Release
     ```  
     b. Windows  
-
+    ```bash
+        bash> cd packing
+        bash> mkdir -p build\make
+        bash> cmake ../.. -G "Visual Studio 15 2017" -DCMAKE_BUILD_TYPE=Release
+        bash> cmake --build . --config Release
+    ``` 
 
 ## How to use
 1. prerequisite  

@@ -13,20 +13,17 @@ file( GLOB SOURCE_FILES
         ${SRCROOT}/src/argvparser.cpp
         ${SRCROOT}/src/BrutalPacking.cpp
         ${SRCROOT}/Packing.cpp
-        ${SRCROOT}/stdafx.cpp
         )
 
-if(WINDOWS)
+
+find_package(Threads REQUIRED)
+find_package(OpenCL REQUIRED)
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     add_definitions("-DWINDOWS")
-elseif(LINUX)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     add_definitions("-DLINUX")
-    include_directories("/usr/local/include")
-    include_directories("/opt/local/include")
-    LINK_DIRECTORIES("/usr/local/lib")
-    LINK_DIRECTORIES("/opt/local/lib")
-    LINK_DIRECTORIES("/usr/local/cuda-9.2/lib64/")
 endif()
 
-
 add_executable(Packing ${SOURCE_FILES})
-target_link_libraries(Packing OpenCL pthread)
+target_link_libraries(Packing OpenCL::OpenCL ${CMAKE_THREAD_LIBS_INIT})

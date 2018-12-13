@@ -1,9 +1,5 @@
 // Packing.cpp : Defines the entry point for the console application.
 //
-
-#ifdef WINDOWS
-    #include "stdafx.h"
-#endif
 #include "src/BrutalPacking.h"
 #include "src/argvparser.h"
 #include "src/Log.h"
@@ -31,14 +27,17 @@ int main(int argc, char* argv[])
     parser.defineOption("lp", "GPU loop limit default is 1000",ArgvParser::NoOptionAttribute | ArgvParser::OptionRequiresValue);
     parser.defineOption("debug", "debug flag",ArgvParser::NoOptionAttribute);
 
-    if(parser.parse(argc, argv) != ArgvParser::NoParserError){
-        cout << endl << parser.usageDescription() << endl;
-        return false;
-    }
+    
+    auto parseResult = parser.parse(argc, argv);
     if(parser.foundOption("version")){
         cout << "Version 0.8.3" << endl;
         return true;
     }
+    if(parseResult != ArgvParser::NoParserError){
+        cout << endl << parser.usageDescription() << endl;
+        return false;
+    }
+
 
     if(parser.foundOption("f") && parser.foundOption("size")){
         string path = parser.optionValue("f");
